@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2021-05-08'
+__updated__='2021-05-12'
 
 @author: jung
 '''
@@ -100,10 +100,7 @@ def solve(Pzzl):
                     continue
                 # Cipher is not used yet. Put it on the square!
                 Pzzl[y][x] = l
-                # This is the last square. We are done!
-                if (x, y) == (8, 8):
-                    return True
-                # This is not the last square. Can we solve the puzzle with the current cipher added?
+                # Can we solve the puzzle with the current cipher added?
                 if solve(Pzzl):
                     # Yes, we solved it!
                     return True
@@ -115,14 +112,24 @@ def solve(Pzzl):
             return False
 
 
-Pzzl = May2021
+# All puzzles
+Pzzls = {"Sudoku book, cover": Pzzl00,
+         "Sudoku book, puzzle 91": Pzzl91,
+         "Alverde magazine, March 2021": Mar2021,
+         "Alverde magazine, Aplril 2021": Apr2021,
+         "Alverde magazine, May 2021": May2021}
 
-print(Pzzl)
-print()
+# Solve each puzzle
+for k in Pzzls:
 
-if solve(Pzzl):
+    Pzzl = Pzzls[k]
+    print(k)
     print(Pzzl)
-    print("Attempts: {}".format(attempts))
-else:
-    print("No solution found!")
+    print()
+
+    if solve(Pzzl):
+        print(Pzzl)
+        print("Attempts: {}\n\n".format(attempts))
+    else:
+        print("No solution found!")
 
