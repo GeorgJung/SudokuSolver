@@ -106,7 +106,7 @@ def solve(Pzzl):
                     return True
                 # No, that did not work. Try the next cipher.
 
-            # No cipher was able to solve the puzzle. Reset to zero and backtrack!
+            # No valid cipher found for the current square. Reset to zero and backtrack!
             Pzzl[y][x] = 0
             attempts += 1
             return False
