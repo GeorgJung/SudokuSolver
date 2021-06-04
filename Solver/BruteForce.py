@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2021-05-12'
+__updated__='2021-06-05'
 
 @author: jung
 '''
@@ -106,7 +106,8 @@ def solve(Pzzl):
                     return True
                 # No, that did not work. Try the next cipher.
 
-            # No valid cipher found for the current square. Reset to zero and backtrack!
+            # No valid cipher found for the current square. Reset to zero and
+            # backtrack!
             Pzzl[y][x] = 0
             attempts += 1
             return False
