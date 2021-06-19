@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2021-06-05'
+__updated__='2021-06-19'
 
 @author: jung
 '''
@@ -71,6 +71,16 @@ May2021 = np.array([[0, 4, 0, 0, 0, 0, 0, 9, 0],
                     [9, 5, 0, 0, 8, 0, 0, 3, 2],
                     [0, 8, 0, 0, 0, 0, 0, 6, 0]])
 
+June2021 = np.array([[0, 0, 1, 0, 0, 0, 0, 2, 0],
+                     [0, 2, 0, 3, 0, 0, 6, 0, 8],
+                     [4, 0, 0, 0, 5, 0, 0, 1, 0],
+                     [0, 6, 0, 7, 0, 0, 0, 0, 0],
+                     [0, 0, 8, 0, 0, 0, 1, 0, 0],
+                     [0, 0, 0, 0, 0, 2, 0, 3, 0],
+                     [0, 3, 0, 0, 4, 0, 0, 0, 5],
+                     [5, 0, 4, 0, 0, 6, 0, 7, 0],
+                     [0, 7, 0, 0, 0, 0, 8, 0, 0]])
+
 attempts = 0
 
 
@@ -118,7 +128,8 @@ Pzzls = {"Sudoku book, cover": Pzzl00,
          "Sudoku book, puzzle 91": Pzzl91,
          "Alverde magazine, March 2021": Mar2021,
          "Alverde magazine, Aplril 2021": Apr2021,
-         "Alverde magazine, May 2021": May2021}
+         "Alverde magazine, May 2021": May2021,
+         "Alverde magazine, June 2021": June2021}
 
 # Solve each puzzle
 for k in Pzzls:
