@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2021-06-19'
+__updated__='2021-07-08'
 
 @author: jung
 '''
@@ -71,17 +71,34 @@ May2021 = np.array([[0, 4, 0, 0, 0, 0, 0, 9, 0],
                     [9, 5, 0, 0, 8, 0, 0, 3, 2],
                     [0, 8, 0, 0, 0, 0, 0, 6, 0]])
 
-June2021 = np.array([[0, 0, 1, 0, 0, 0, 0, 2, 0],
-                     [0, 2, 0, 3, 0, 0, 6, 0, 8],
-                     [4, 0, 0, 0, 5, 0, 0, 1, 0],
-                     [0, 6, 0, 7, 0, 0, 0, 0, 0],
-                     [0, 0, 8, 0, 0, 0, 1, 0, 0],
-                     [0, 0, 0, 0, 0, 2, 0, 3, 0],
-                     [0, 3, 0, 0, 4, 0, 0, 0, 5],
-                     [5, 0, 4, 0, 0, 6, 0, 7, 0],
-                     [0, 7, 0, 0, 0, 0, 8, 0, 0]])
+Jun2021 = np.array([[0, 0, 1, 0, 0, 0, 0, 2, 0],
+                    [0, 2, 0, 3, 0, 0, 6, 0, 8],
+                    [4, 0, 0, 0, 5, 0, 0, 1, 0],
+                    [0, 6, 0, 7, 0, 0, 0, 0, 0],
+                    [0, 0, 8, 0, 0, 0, 1, 0, 0],
+                    [0, 0, 0, 0, 0, 2, 0, 3, 0],
+                    [0, 3, 0, 0, 4, 0, 0, 0, 5],
+                    [5, 0, 4, 0, 0, 6, 0, 7, 0],
+                    [0, 7, 0, 0, 0, 0, 8, 0, 0]])
 
-attempts = 0
+Jul2021 = np.array([[1, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 7, 0, 4, 5, 0, 0, 0, 0],
+                    [0, 0, 6, 0, 8, 0, 1, 5, 0],
+                    [0, 5, 0, 0, 0, 2, 0, 1, 0],
+                    [8, 0, 0, 0, 0, 0, 0, 0, 6],
+                    [0, 3, 0, 5, 0, 0, 0, 8, 0],
+                    [0, 1, 2, 0, 3, 0, 9, 0, 0],
+                    [0, 0, 0, 0, 6, 9, 0, 4, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 7]])
+
+# All puzzles
+Pzzls = {"Sudoku book, cover": Pzzl00,
+         "Sudoku book, puzzle 91": Pzzl91,
+         "Alverde magazine, March 2021": Mar2021,
+         "Alverde magazine, April 2021": Apr2021,
+         "Alverde magazine, May 2021": May2021,
+         "Alverde magazine, June 2021": Jun2021,
+         "Alverde magazine, July 2021": Jul2021}
 
 
 def solve(Pzzl):
@@ -123,16 +140,9 @@ def solve(Pzzl):
             return False
 
 
-# All puzzles
-Pzzls = {"Sudoku book, cover": Pzzl00,
-         "Sudoku book, puzzle 91": Pzzl91,
-         "Alverde magazine, March 2021": Mar2021,
-         "Alverde magazine, Aplril 2021": Apr2021,
-         "Alverde magazine, May 2021": May2021,
-         "Alverde magazine, June 2021": June2021}
-
 # Solve each puzzle
 for k in Pzzls:
+    attempts = 0
 
     Pzzl = Pzzls[k]
     print(k)
