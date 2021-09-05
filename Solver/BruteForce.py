@@ -123,15 +123,14 @@ Pzzls = {"Sudoku book, cover": Pzzl00,
          "Alverde magazine, September 2021": Sep2021}
 
 
-def solve(Pzzl):
-    global attempts
+def solve(Pzzl, a):
     # find the first empty square
     for x in range(9):
         for y in range(9):
             if Pzzl[y][x]:
                 # This is the last square, and it is not empty. We are done!
                 if (x, y) == (8, 8):
-                    return True
+                    return (True, a)
                 # This square is not the last and also not empty. Try the next!
                 continue
 
@@ -149,29 +148,32 @@ def solve(Pzzl):
                     continue
                 # Cipher is not used yet. Put it on the square!
                 Pzzl[y][x] = l
+
                 # Can we solve the puzzle with the current cipher added?
-                if solve(Pzzl):
+                (scss, a) = solve(Pzzl, a)
+
+                if scss:
                     # Yes, we solved it!
-                    return True
+                    return (True, a)
                 # No, that did not work. Try the next cipher.
 
             # No valid cipher found for the current square. Reset to zero and
             # backtrack!
             Pzzl[y][x] = 0
-            attempts += 1
-            return False
+            a += 1
+            return (False, a)
 
 
 # Solve each puzzle
 for k in Pzzls:
-    attempts = 0
-
     Puzzle = Pzzls[k]
     print(k)
     print(Puzzle)
     print()
 
-    if solve(Puzzle):
+    (success, attempts) = solve(Puzzle, 0)
+
+    if success:
         print(Puzzle)
         print("Attempts: {}\n\n".format(attempts))
     else:
