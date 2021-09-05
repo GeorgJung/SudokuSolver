@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2021-08-08'
+__updated__='2021-09-05'
 
 @author: jung
 '''
@@ -101,6 +101,16 @@ Aug2021 = np.array([[0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [2, 0, 0, 0, 6, 8, 1, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0]])
 
+Sep2021 = np.array([[0, 0, 3, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 4, 0, 0, 5, 6, 0, 0],
+                    [0, 7, 0, 9, 0, 0, 0, 2, 1],
+                    [0, 9, 0, 5, 0, 6, 7, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 7, 3, 0, 4, 0, 8, 0],
+                    [1, 8, 0, 0, 0, 2, 0, 3, 0],
+                    [0, 0, 5, 6, 0, 0, 9, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 4, 0, 0]])
+
 # All puzzles
 Pzzls = {"Sudoku book, cover": Pzzl00,
          "Sudoku book, puzzle 91": Pzzl91,
@@ -109,7 +119,8 @@ Pzzls = {"Sudoku book, cover": Pzzl00,
          "Alverde magazine, May 2021": May2021,
          "Alverde magazine, June 2021": Jun2021,
          "Alverde magazine, July 2021": Jul2021,
-         "Alverde magazine, August 2021": Aug2021}
+         "Alverde magazine, August 2021": Aug2021,
+         "Alverde magazine, September 2021": Sep2021}
 
 
 def solve(Pzzl):
@@ -155,13 +166,13 @@ def solve(Pzzl):
 for k in Pzzls:
     attempts = 0
 
-    Pzzl = Pzzls[k]
+    Puzzle = Pzzls[k]
     print(k)
-    print(Pzzl)
+    print(Puzzle)
     print()
 
-    if solve(Pzzl):
-        print(Pzzl)
+    if solve(Puzzle):
+        print(Puzzle)
         print("Attempts: {}\n\n".format(attempts))
     else:
         print("No solution found!")
