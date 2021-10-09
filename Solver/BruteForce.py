@@ -1,12 +1,23 @@
 '''
 Created on 15.02.2021
 
-__updated__='2021-09-05'
+__updated__='2021-10-09'
 
 @author: jung
 '''
 
 import numpy as np
+
+# Puzzle from cover of Sudoku
+Pzzlxx = np.array([[0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   [0, 0, 0, 0, 0, 0, 0, 0, 0]])
 
 # Puzzle from cover of Sudoku
 Pzzl00 = np.array([[0, 0, 0, 0, 8, 0, 9, 0, 0],
@@ -111,8 +122,19 @@ Sep2021 = np.array([[0, 0, 3, 0, 0, 0, 0, 0, 0],
                     [0, 0, 5, 6, 0, 0, 9, 0, 0],
                     [0, 0, 0, 0, 0, 0, 4, 0, 0]])
 
+Oct2021 = np.array([[0, 0, 0, 0, 0, 7, 0, 0, 0],
+                    [0, 0, 0, 8, 9, 0, 3, 0, 0],
+                    [0, 3, 4, 0, 0, 0, 5, 0, 0],
+                    [1, 0, 0, 0, 0, 8, 0, 6, 0],
+                    [0, 7, 0, 0, 1, 0, 0, 4, 0],
+                    [0, 8, 0, 7, 0, 0, 0, 0, 2],
+                    [0, 0, 5, 0, 0, 0, 8, 2, 0],
+                    [0, 0, 9, 0, 2, 4, 0, 0, 0],
+                    [0, 0, 0, 6, 0, 0, 0, 0, 0]])
+
 # All puzzles
-Pzzls = {"Sudoku book, cover": Pzzl00,
+Pzzls = {"Empty puzzle": Pzzlxx,
+         "Sudoku book, cover": Pzzl00,
          "Sudoku book, puzzle 91": Pzzl91,
          "Alverde magazine, March 2021": Mar2021,
          "Alverde magazine, April 2021": Apr2021,
@@ -120,7 +142,8 @@ Pzzls = {"Sudoku book, cover": Pzzl00,
          "Alverde magazine, June 2021": Jun2021,
          "Alverde magazine, July 2021": Jul2021,
          "Alverde magazine, August 2021": Aug2021,
-         "Alverde magazine, September 2021": Sep2021}
+         "Alverde magazine, September 2021": Sep2021,
+         "Alverde magazine, October 2021": Oct2021}
 
 
 def solve(Pzzl, a):
