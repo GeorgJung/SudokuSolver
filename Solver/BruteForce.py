@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2022-05-07'
+__updated__='2022-06-05'
 
 @author: jung
 '''
@@ -202,6 +202,16 @@ May2022 = np.array([[0, 0, 5, 6, 7, 8, 0, 0, 0],
                     [0, 0, 4, 0, 0, 0, 0, 8, 0],
                     [0, 0, 0, 1, 6, 3, 7, 0, 0]])
 
+Jun2022 = np.array([[0, 0, 0, 0, 5, 3, 6, 0, 0],
+                    [0, 0, 0, 4, 0, 0, 0, 9, 0],
+                    [1, 2, 3, 0, 0, 0, 0, 7, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 5, 0],
+                    [0, 0, 7, 3, 9, 2, 8, 0, 0],
+                    [0, 9, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 8, 0, 0, 0, 0, 5, 4, 1],
+                    [0, 6, 0, 0, 0, 4, 0, 0, 0],
+                    [0, 0, 2, 8, 1, 0, 0, 0, 0]])
+
 # All puzzles
 Pzzls = {"Empty puzzle": Pzzlxx,
          "Sudoku book, cover": Pzzl00,
@@ -220,7 +230,8 @@ Pzzls = {"Empty puzzle": Pzzlxx,
          "Alverde magazine, February 2022": Feb2022,
          "Alverde magazine, March 2022": Mar2022,
          "Alverde magazine, April 2022": Apr2022,
-         "Alverde magazine, May 2022": May2022}
+         "Alverde magazine, May 2022": May2022,
+         "Alverde magazine, June 2022": Jun2022}
 
 
 def solve(Pzzl, a):
@@ -278,4 +289,3 @@ for k in Pzzls:
         print("Attempts: {}\n\n".format(attempts))
     else:
         print("No solution found!")
-
