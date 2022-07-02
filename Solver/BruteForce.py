@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2022-06-05'
+__updated__='2022-07-02'
 
 @author: jung
 '''
@@ -212,10 +212,21 @@ Jun2022 = np.array([[0, 0, 0, 0, 5, 3, 6, 0, 0],
                     [0, 6, 0, 0, 0, 4, 0, 0, 0],
                     [0, 0, 2, 8, 1, 0, 0, 0, 0]])
 
+Jul2022 = np.array([[0, 0, 0, 6, 5, 4, 0, 0, 0],
+                    [0, 0, 1, 0, 0, 8, 9, 0, 0],
+                    [0, 5, 0, 0, 0, 0, 7, 4, 0],
+                    [6, 0, 0, 0, 0, 0, 0, 2, 7],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [8, 9, 0, 0, 0, 0, 0, 0, 6],
+                    [0, 4, 2, 0, 0, 0, 0, 1, 0],
+                    [0, 0, 7, 4, 0, 0, 3, 0, 0],
+                    [0, 0, 0, 2, 9, 6, 0, 0, 0]])
+
 # All puzzles
 Pzzls = {"Empty puzzle": Pzzlxx,
          "Sudoku book, cover": Pzzl00,
          "Sudoku book, puzzle 91": Pzzl91,
+         "Alverde magazine, Februar 2021": Feb2021,
          "Alverde magazine, March 2021": Mar2021,
          "Alverde magazine, April 2021": Apr2021,
          "Alverde magazine, May 2021": May2021,
@@ -231,7 +242,8 @@ Pzzls = {"Empty puzzle": Pzzlxx,
          "Alverde magazine, March 2022": Mar2022,
          "Alverde magazine, April 2022": Apr2022,
          "Alverde magazine, May 2022": May2022,
-         "Alverde magazine, June 2022": Jun2022}
+         "Alverde magazine, June 2022": Jun2022,
+         "Alverde magazine, July 2022": Jul2022}
 
 
 def solve(Pzzl, a):
@@ -276,7 +288,25 @@ def solve(Pzzl, a):
 
 
 # Solve each puzzle
-for k in Pzzls:
+def solveall():
+    for k in Pzzls:
+        Puzzle = Pzzls[k]
+        print(k)
+        print(Puzzle)
+        print()
+
+        (success, attempts) = solve(Puzzle, 0)
+
+        if success:
+            print(Puzzle)
+            print("Attempts: {}\n\n".format(attempts))
+        else:
+            print("No solution found!")
+
+
+# Solve latest puzzle
+def solvelatest():
+    k = list(Pzzls)[-1]
     Puzzle = Pzzls[k]
     print(k)
     print(Puzzle)
@@ -289,3 +319,12 @@ for k in Pzzls:
         print("Attempts: {}\n\n".format(attempts))
     else:
         print("No solution found!")
+
+
+# Main
+if __name__ == '__main__':
+    x = input("Solve all (y/n)? ")
+    if x == 'y' or x == 'Y':
+        solveall()
+    else:
+        solvelatest()
