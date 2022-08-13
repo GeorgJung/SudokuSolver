@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2022-07-02'
+__updated__='2022-08-13'
 
 @author: jung
 '''
@@ -41,7 +41,7 @@ Pzzl91 = np.array([[0, 0, 0, 0, 0, 0, 0, 0, 0],
                    [0, 0, 0, 6, 0, 0, 3, 0, 5],
                    [0, 6, 0, 0, 0, 7, 0, 0, 4]])
 
-# Puzzle from Alverde magazine February 2021
+# Puzzles from Alverde magazine since February 2021
 Feb2021 = np.array([[0, 0, 7, 0, 0, 0, 1, 0, 0],
                     [0, 3, 0, 0, 0, 0, 0, 2, 0],
                     [1, 0, 0, 5, 0, 9, 0, 0, 4],
@@ -222,6 +222,16 @@ Jul2022 = np.array([[0, 0, 0, 6, 5, 4, 0, 0, 0],
                     [0, 0, 7, 4, 0, 0, 3, 0, 0],
                     [0, 0, 0, 2, 9, 6, 0, 0, 0]])
 
+Aug2022 = np.array([[0, 0, 0, 7, 8, 1, 0, 0, 0],
+                    [0, 0, 6, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 9, 0, 0, 0, 3, 7, 0],
+                    [3, 0, 0, 1, 0, 7, 0, 0, 9],
+                    [9, 0, 0, 0, 6, 0, 0, 0, 4],
+                    [8, 0, 0, 9, 0, 3, 0, 0, 2],
+                    [0, 1, 3, 0, 0, 0, 5, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 1, 0, 0],
+                    [0, 0, 0, 4, 1, 2, 0, 0, 0]])
+
 # All puzzles
 Pzzls = {"Empty puzzle": Pzzlxx,
          "Sudoku book, cover": Pzzl00,
@@ -243,7 +253,8 @@ Pzzls = {"Empty puzzle": Pzzlxx,
          "Alverde magazine, April 2022": Apr2022,
          "Alverde magazine, May 2022": May2022,
          "Alverde magazine, June 2022": Jun2022,
-         "Alverde magazine, July 2022": Jul2022}
+         "Alverde magazine, July 2022": Jul2022,
+         "Alverde magazine, August 2022": Aug2022}
 
 
 def solve(Pzzl, a):
@@ -287,10 +298,10 @@ def solve(Pzzl, a):
             return (False, a)
 
 
-# Solve each puzzle
-def solveall():
-    for k in Pzzls:
-        Puzzle = Pzzls[k]
+# Solve all puzzles in the dictionary P
+def solvepuzzles(P):
+    for k in P:
+        Puzzle = P[k]
         print(k)
         print(Puzzle)
         print()
@@ -304,27 +315,16 @@ def solveall():
             print("No solution found!")
 
 
-# Solve latest puzzle
-def solvelatest():
-    k = list(Pzzls)[-1]
-    Puzzle = Pzzls[k]
-    print(k)
-    print(Puzzle)
-    print()
-
-    (success, attempts) = solve(Puzzle, 0)
-
-    if success:
-        print(Puzzle)
-        print("Attempts: {}\n\n".format(attempts))
-    else:
-        print("No solution found!")
-
-
 # Main
 if __name__ == '__main__':
-    x = input("Solve all (y/n)? ")
-    if x == 'y' or x == 'Y':
-        solveall()
+    # Solve all puzzles (takes time!) or only the last one?
+    c = input("Solve all (y/n)? ")
+
+    # If yes, hand entire dictionary to iterating wrapper
+    if c == 'y' or c == 'Y':
+        solvepuzzles(Pzzls)
+
+    # If no, hand a dictionary with only the last puzzle to iterating wrapper
     else:
-        solvelatest()
+        key = dict.keys()[-1]
+        solvepuzzles({key: Pzzls[key]})
