@@ -326,5 +326,4 @@ if __name__ == '__main__':
 
     # If no, hand a dictionary with only the last puzzle to iterating wrapper
     else:
-        key = dict.keys()[-1]
-        solvepuzzles({key: Pzzls[key]})
+        solvepuzzles(dict([Pzzls.popitem()]))
