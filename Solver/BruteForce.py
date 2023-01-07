@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2022-11-06'
+__updated__='2023-01-07'
 
 @author: jung
 '''
@@ -262,6 +262,26 @@ Nov2022 = np.array([[0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [7, 0, 5, 0, 0, 0, 3, 0, 6],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0]])
 
+Dec2022 = np.array([[0, 1, 0, 0, 8, 0, 0, 0, 0],
+                    [0, 0, 7, 4, 0, 0, 0, 0, 8],
+                    [0, 0, 2, 5, 0, 0, 4, 7, 0],
+                    [1, 0, 0, 0, 0, 0, 3, 2, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 6],
+                    [0, 6, 8, 0, 0, 0, 0, 0, 0],
+                    [0, 2, 9, 0, 0, 1, 7, 0, 0],
+                    [3, 0, 0, 0, 0, 4, 9, 0, 0],
+                    [0, 0, 0, 0, 6, 0, 0, 5, 0]])
+
+Jan2023 = np.array([[0, 0, 5, 0, 0, 0, 9, 0, 0],
+                    [0, 7, 0, 0, 0, 2, 0, 0, 4],
+                    [0, 0, 2, 0, 6, 0, 0, 1, 0],
+                    [5, 0, 0, 3, 0, 0, 8, 0, 0],
+                    [0, 9, 0, 0, 1, 0, 0, 6, 0],
+                    [0, 0, 3, 0, 0, 8, 0, 0, 7],
+                    [0, 6, 0, 0, 9, 0, 1, 0, 0],
+                    [8, 0, 0, 7, 0, 0, 0, 2, 0],
+                    [0, 0, 4, 0, 0, 0, 5, 0, 0]])
+
 # All puzzles
 Pzzls = {"Empty puzzle": Pzzl_xx,
          "Sudoku book, cover": Pzzl_00,
@@ -287,7 +307,9 @@ Pzzls = {"Empty puzzle": Pzzl_xx,
          "Alverde magazine, August 2022": Aug2022,
          "Alverde magazine, September 2022": Sep2022,
          "Alverde magazine, October 2022": Oct2022,
-         "Alverde magazine, November 2022": Nov2022}
+         "Alverde magazine, November 2022": Nov2022,
+         "Alverde magazine, December 2022": Dec2022,
+         "Alverde magazine, January 2023": Jan2023}
 
 
 def solve(Pzzl, a):
