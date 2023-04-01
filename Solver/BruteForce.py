@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2023-03-05'
+__updated__='2023-04-01'
 
 @author: jung
 '''
@@ -302,6 +302,16 @@ Mar2023 = np.array([[0, 0, 0, 5, 6, 0, 0, 0, 0],
                     [0, 9, 7, 0, 0, 0, 0, 5, 0],
                     [0, 0, 0, 0, 7, 9, 0, 0, 0]])
 
+Apr2023 = np.array([[8, 0, 0, 0, 0, 0, 0, 5, 6],
+                    [2, 0, 0, 0, 0, 6, 0, 0, 0],
+                    [0, 0, 0, 0, 2, 3, 0, 0, 0],
+                    [0, 3, 1, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 7, 0, 4, 0, 3, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 7, 2, 0],
+                    [0, 0, 0, 8, 3, 0, 0, 0, 0],
+                    [0, 0, 0, 9, 0, 0, 0, 0, 1],
+                    [4, 6, 0, 0, 0, 0, 0, 0, 5]])
+
 # All puzzles
 Pzzls = {"Empty puzzle": Pzzl_xx,
          "Sudoku book, cover": Pzzl_00,
@@ -331,7 +341,8 @@ Pzzls = {"Empty puzzle": Pzzl_xx,
          "Alverde magazine, December 2022": Dec2022,
          "Alverde magazine, January 2023": Jan2023,
          "Alverde magazine, February 2023": Feb2023,
-         "Alverde magazine, March 2023": Mar2023}
+         "Alverde magazine, March 2023": Mar2023,
+         "Alverde magazine, April 2023": Apr2023}
 
 
 def solve(Pzzl, a):
