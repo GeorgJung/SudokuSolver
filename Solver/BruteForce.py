@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2025-08-23'
+__updated__='2025-09-10'
 
 @author: jung
 '''
@@ -592,6 +592,16 @@ Aug2025 = np.array([[0, 0, 3, 0, 0, 0, 0, 0, 4],
                     [0, 9, 0, 0, 0, 8, 4, 0, 0],
                     [3, 0, 0, 0, 0, 0, 1, 0, 0]])
 
+Sep2025 = np.array([[0, 0, 9, 0, 8, 0, 0, 6, 0],
+                    [7, 0, 0, 2, 0, 0, 5, 0, 0],
+                    [0, 2, 0, 0, 0, 1, 0, 0, 9],
+                    [0, 0, 4, 0, 9, 0, 0, 3, 0],
+                    [5, 0, 0, 4, 6, 3, 0, 0, 1],
+                    [0, 8, 0, 0, 7, 0, 6, 0, 0],
+                    [6, 0, 0, 9, 0, 0, 0, 1, 0],
+                    [0, 0, 3, 0, 0, 6, 0, 0, 8],
+                    [0, 7, 0, 0, 5, 0, 2, 0, 0]])
+
 # All puzzles
 Pzzls = {"Empty puzzle": Pzzl_xx,
          "Sudoku book, cover": Pzzl_00,
@@ -650,7 +660,8 @@ Pzzls = {"Empty puzzle": Pzzl_xx,
          "Alverde magazine, May 2025": May2025,
          "Alverde magazine, June 2025": Jun2025,
          "Alverde magazine, Junly 2025": Jul2025,
-         "Alverde magazine, August 2025": Aug2025}
+         "Alverde magazine, August 2025": Aug2025,
+         "Alverde magazine, September 2025": Sep2025}
 
 
 def solve(Pzzl, a):
