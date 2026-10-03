@@ -1,7 +1,7 @@
 '''
 Created on 15.02.2021
 
-__updated__='2026-09-07'
+__updated__='2026-10-03'
 
 @author: jung
 '''
@@ -692,6 +692,16 @@ Sep2026 = np.array([[0, 4, 0, 0, 1, 0, 0, 9, 0],
                     [0, 0, 6, 7, 0, 0, 4, 0, 0],
                     [0, 9, 0, 0, 4, 0, 0, 8, 0]])
 
+Oct2026 = np.array([[0, 7, 0, 0, 0, 6, 0, 0, 4],
+                    [1, 0, 0, 0, 2, 0, 0, 3, 0],
+                    [0, 0, 4, 8, 0, 0, 6, 0, 0],
+                    [0, 0, 5, 7, 0, 0, 0, 0, 8],
+                    [0, 2, 0, 0, 0, 0, 0, 1, 0],
+                    [3, 0, 0, 0, 0, 9, 5, 0, 0],
+                    [0, 0, 6, 0, 0, 4, 1, 0, 0],
+                    [0, 5, 0, 0, 7, 0, 0, 0, 9],
+                    [7, 0, 0, 3, 0, 0, 0, 2, 0]])
+
 # All puzzles
 Pzzls = {"Empty puzzle": Pzzl_xx,
          "Sudoku book, cover": Pzzl_00,
@@ -760,7 +770,8 @@ Pzzls = {"Empty puzzle": Pzzl_xx,
          "Alverde magazine, May 2026": May2026,
          "Alverde magazine, July 2026": Jul2026,
          "Alverde magazine, August 2026": Aug2026,
-         "Alverde magazine, September 2026": Sep2026
+         "Alverde magazine, September 2026": Sep2026,
+         "Alverde magazine, October 2026": Oct2026
 }
 
 
